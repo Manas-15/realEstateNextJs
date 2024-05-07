@@ -125,10 +125,41 @@ const UserDropdown = props => {
         <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/user-profile/profile')}>
           <Box sx={styles}>
             <Icon icon='mdi:account-outline' />
-            Profile
+            My Profile
           </Box>
         </MenuItem>
-        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/apps/email')}>
+        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/user-profile/profile')}>
+          <Box sx={styles}>
+            <Icon icon='mdi:account-outline' />
+            My Goal Sheet
+          </Box>
+        </MenuItem>
+        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/user-profile/profile')}>
+          <Box sx={styles}>
+            <Icon icon='mdi:account-outline' />
+            My Target Sheet
+          </Box>
+        </MenuItem>
+        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/user-profile/profile')}>
+          <Box sx={styles}>
+            <Icon icon='mdi:account-outline' />
+            My Follow Up
+          </Box>
+        </MenuItem>
+        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/user-profile/profile')}>
+          <Box sx={styles}>
+            <Icon icon='mdi:account-outline' />
+            My Earnings
+          </Box>
+        </MenuItem>
+        <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/pages/user-profile/profile')}>
+          <Box sx={styles}>
+            <Icon icon='mdi:account-outline' />
+            My To Do List
+          </Box>
+        </MenuItem>
+
+        {/* <MenuItem sx={{ p: 0 }} onClick={() => handleDropdownClose('/apps/email')}>
           <Box sx={styles}>
             <Icon icon='mdi:email-outline' />
             Inbox
@@ -158,7 +189,7 @@ const UserDropdown = props => {
             <Icon icon='mdi:help-circle-outline' />
             FAQ
           </Box>
-        </MenuItem>
+        </MenuItem> */}
         <Divider />
         <MenuItem
           onClick={handleLogout}

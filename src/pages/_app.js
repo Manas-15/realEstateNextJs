@@ -61,13 +61,13 @@ const clientSideEmotionCache = createEmotionCache()
 // ** Pace Loader
 if (themeConfig.routingLoader) {
   Router.events.on('routeChangeStart', () => {
-    NProgress.start()
+    // NProgress.start()
   })
   Router.events.on('routeChangeError', () => {
-    NProgress.done()
+    // NProgress.done()
   })
   Router.events.on('routeChangeComplete', () => {
-    NProgress.done()
+    // NProgress.done()
   })
 }
 

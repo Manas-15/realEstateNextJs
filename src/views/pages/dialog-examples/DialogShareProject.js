@@ -261,7 +261,7 @@ const DialogShareProject = () => {
             <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 2 } }}>
               <Icon icon='mdi:account-multiple-outline' fontSize='1.25rem' />
               <Typography sx={{ fontWeight: 600, fontSize: '0.875rem' }}>
-                {`Public to ${themeConfig.templateName} - Pixinvent`}
+                {`Public to ${themeConfig.templateName}`}
               </Typography>
             </Box>
             <Button sx={{ lineHeight: '1.5rem', '& svg': { mr: 2 } }}>

@@ -178,7 +178,7 @@ const DialogReferEarn = () => {
                 whiteSpace: 'break-spaces'
               }}
             >
-              {`Enter your friend’s email address and invite them to join ${themeConfig.templateName} 😍`}
+              {`Enter your friend’s email address and invite them to join ${themeConfig.templateName}`}
             </InputLabel>
             <Box sx={{ display: 'flex', alignItems: 'center', width: '100%', flexWrap: { xs: 'wrap', sm: 'nowrap' } }}>
               <TextField

@@ -69,10 +69,12 @@ const AuthProvider = ({ children }) => {
           ? window.localStorage.setItem(authConfig.storageTokenKeyName, response.data.accessToken)
           : null
         const returnUrl = router.query.returnUrl
+        console.log('returnUrl', returnUrl)
         setUser({ ...response.data.userData })
         params.rememberMe ? window.localStorage.setItem('userData', JSON.stringify(response.data.userData)) : null
         const redirectURL = returnUrl && returnUrl !== '/' ? returnUrl : '/'
-        router.replace(redirectURL)
+        console.log('redirectURL', redirectURL)
+        router.replace('/apps/user/list')
       })
       .catch(err => {
         if (errorCallback) errorCallback(err)
