@@ -20,6 +20,7 @@ import FormControl from '@mui/material/FormControl'
 import CardContent from '@mui/material/CardContent'
 import { DataGrid } from '@mui/x-data-grid'
 import Select from '@mui/material/Select'
+import Tooltip from '@mui/material/Tooltip'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -173,19 +174,19 @@ const columns = [
       )
     }
   },
-  {
-    flex: 0.2,
-    minWidth: 250,
-    field: 'email',
-    headerName: 'Email',
-    renderCell: ({ row }) => {
-      return (
-        <Typography noWrap variant='body2'>
-          {row.email}
-        </Typography>
-      )
-    }
-  },
+  // {
+  //   flex: 0.2,
+  //   minWidth: 250,
+  //   field: 'email',
+  //   headerName: 'Email',
+  //   renderCell: ({ row }) => {
+  //     return (
+  //       <Typography noWrap variant='body2'>
+  //         {row.email}
+  //       </Typography>
+  //     )
+  //   }
+  // },
   {
     flex: 0.15,
     field: 'role',
@@ -204,7 +205,7 @@ const columns = [
   },
   {
     flex: 0.15,
-    minWidth: 120,
+    minWidth: 100,
     headerName: 'Plan',
     field: 'currentPlan',
     renderCell: ({ row }) => {
@@ -216,8 +217,22 @@ const columns = [
     }
   },
   {
+    flex: 0.15,
+    minWidth: 90,
+    headerName: 'Billing',
+    field: 'currentBill',
+    renderCell: ({ row }) => {
+      return (
+        <Typography variant='subtitle1' noWrap sx={{ textTransform: 'capitalize' }}>
+          {/* {row.currentPlan} */}
+          Cash
+        </Typography>
+      )
+    }
+  },
+  {
     flex: 0.1,
-    minWidth: 110,
+    minWidth: 90,
     field: 'status',
     headerName: 'Status',
     renderCell: ({ row }) => {
@@ -235,11 +250,27 @@ const columns = [
   {
     flex: 0.1,
     minWidth: 90,
-    sortable: false,
     field: 'actions',
     headerName: 'Actions',
-    renderCell: ({ row }) => <RowOptions id={row.id} />
+    renderCell: ({ row }) => {
+      return (
+        <Tooltip title='View'>
+          <IconButton size='small' component={Link} sx={{ mr: 0.5 }} href={`/apps/invoice/preview/${row.id}`}>
+            <Icon icon='mdi:eye-outline' />
+          </IconButton>
+        </Tooltip>
+      )
+    }
   }
+
+  // {
+  //   flex: 0.1,
+  //   minWidth: 90,
+  //   sortable: false,
+  //   field: 'actions',
+  //   headerName: 'Actions',
+  //   renderCell: ({ row }) => <RowOptions id={row.id} />
+  // }
 ]
 
 const UserList = ({ apiData }) => {
@@ -254,6 +285,7 @@ const UserList = ({ apiData }) => {
   // ** Hooks
   const dispatch = useDispatch()
   const store = useSelector(state => state.user)
+  console.log(store)
   useEffect(() => {
     dispatch(
       fetchData({
@@ -284,7 +316,7 @@ const UserList = ({ apiData }) => {
 
   return (
     <Grid container spacing={6}>
-      <Grid item xs={12}>
+      {/* <Grid item xs={12}>
         {apiData && (
           <Grid container spacing={6}>
             {apiData.statsHorizontal.map((item, index) => {
@@ -296,11 +328,11 @@ const UserList = ({ apiData }) => {
             })}
           </Grid>
         )}
-      </Grid>
+      </Grid> */}
       <Grid item xs={12}>
         <Card>
-          <CardHeader title='Search Filters' sx={{ pb: 4, '& .MuiCardHeader-title': { letterSpacing: '.15px' } }} />
-          <CardContent>
+          {/* <CardHeader title='Search Filters' sx={{ pb: 4, '& .MuiCardHeader-title': { letterSpacing: '.15px' } }} /> */}
+          {/* <CardContent>
             <Grid container spacing={6}>
               <Grid item sm={4} xs={12}>
                 <FormControl fullWidth>
@@ -363,7 +395,7 @@ const UserList = ({ apiData }) => {
                 </FormControl>
               </Grid>
             </Grid>
-          </CardContent>
+          </CardContent> */}
           <Divider />
           <TableHeader value={value} handleFilter={handleFilter} toggle={toggleAddUserDrawer} />
           <DataGrid

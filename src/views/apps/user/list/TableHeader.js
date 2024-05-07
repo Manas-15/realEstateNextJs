@@ -11,15 +11,25 @@ const TableHeader = props => {
   const { handleFilter, toggle, value } = props
 
   return (
-    <Box sx={{ p: 5, pb: 3, display: 'flex', flexWrap: 'wrap', alignItems: 'center', justifyContent: 'space-between' }}>
-      <Button
+    <Box
+      sx={{
+        p: 5,
+        pb: 3,
+        display: 'flex',
+        justifyContent: 'end',
+        flexWrap: 'wrap',
+        alignItems: 'center'
+        // justifyContent: 'space-between'
+      }}
+    >
+      {/* <Button
         sx={{ mr: 4, mb: 2 }}
         color='secondary'
         variant='outlined'
         startIcon={<Icon icon='mdi:export-variant' fontSize={20} />}
       >
         Export
-      </Button>
+      </Button> */}
       <Box sx={{ display: 'flex', flexWrap: 'wrap', alignItems: 'center' }}>
         <TextField
           size='small'
@@ -29,9 +39,9 @@ const TableHeader = props => {
           onChange={e => handleFilter(e.target.value)}
         />
 
-        <Button sx={{ mb: 2 }} onClick={toggle} variant='contained'>
+        {/* <Button sx={{ mb: 2 }} onClick={toggle} variant='contained'>
           Add User
-        </Button>
+        </Button> */}
       </Box>
     </Box>
   )

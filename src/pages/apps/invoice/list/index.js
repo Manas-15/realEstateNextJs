@@ -249,11 +249,13 @@ const InvoiceList = () => {
               <Icon icon='mdi:delete-outline' />
             </IconButton>
           </Tooltip>
+
           <Tooltip title='View'>
             <IconButton size='small' component={Link} sx={{ mr: 0.5 }} href={`/apps/invoice/preview/${row.id}`}>
               <Icon icon='mdi:eye-outline' />
             </IconButton>
           </Tooltip>
+
           <OptionsMenu
             iconProps={{ fontSize: 20 }}
             iconButtonProps={{ size: 'small' }}

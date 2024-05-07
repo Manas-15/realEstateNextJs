@@ -42,7 +42,7 @@ const navigation = () => {
       children: [
         {
           title: 'Roles Right',
-          path: '/apps/invoice/list'
+          path: '/apps/user/list'
         },
         {
           title: 'Module',
@@ -56,11 +56,11 @@ const navigation = () => {
       children: [
         {
           title: 'Company Info',
-          path: '/apps/user/list'
+          path: '/company-info'
         },
         {
           title: 'Bank Info',
-          path: '/apps/user/list/bank'
+          path: '/bank-info'
         }
       ]
     },
@@ -70,11 +70,11 @@ const navigation = () => {
       children: [
         {
           title: 'Department Name',
-          path: '/apps/roles'
+          path: '/departments'
         },
         {
           title: 'Designation',
-          path: '/apps/permissions'
+          path: '/designation'
         }
       ]
     },
@@ -91,12 +91,7 @@ const navigation = () => {
     {
       title: 'Team Management',
       icon: 'mdi:file-document-outline',
-      children: [
-        {
-          title: 'Company Profile',
-          path: '/comapny-profile'
-        }
-      ]
+      path: '/team-management'
     },
     {
       title: 'Projects',
