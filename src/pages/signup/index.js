@@ -20,6 +20,7 @@ import InputAdornment from '@mui/material/InputAdornment'
 import Typography from '@mui/material/Typography'
 import MuiFormControlLabel from '@mui/material/FormControlLabel'
 import Grid from '@mui/material/Grid'
+import { useForm, Controller } from 'react-hook-form'
 
 // ** Icon Imports
 import Icon from 'src/@core/components/icon'
@@ -255,34 +256,37 @@ const Register = () => {
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <FormControl fullWidth>
-                    <TextField
-                      autoFocus
-                      label='Captcha'
-                      value='2780'
-                      // onBlur={onBlur}
-                      // onChange={onChange}
-                      placeholder='Enter Your Captcha'
-                    />
-                    {/* <Controller
-                      name='captcha'
-                      control={control}
-                      rules={{ required: true }}
-                      render={({ field: { value, onChange, onBlur } }) => (
-                        <TextField
-                          autoFocus
-                          label='Captcha'
-                          value={value}
-                          onBlur={onBlur}
-                          onChange={onChange}
-                          placeholder='Enter Your Captcha'
-                        />
-                      )}
-                    /> */}
-                    {/* {errors.captcha && (
-                      <FormHelperText sx={{ color: 'error.main' }}>{errors.captcha.message}</FormHelperText>
-                    )} */}
-                  </FormControl>
+                  <>
+                    <FormControl sx={{ mb: 4, maxWidth: 200 }}>
+                      <TextField autoFocus label='Captcha' placeholder='Enter Your Captcha' size='small' />
+                      {/* <Controller
+                        name='captcha'
+                        control={control}
+                        rules={{ required: true }}
+                        render={({ field: { value, onChange, onBlur } }) => (
+                          <TextField
+                            autoFocus
+                            label='Captcha'
+                            size='small'
+                            value={value}
+                            onBlur={onBlur}
+                            onChange={onChange}
+                            placeholder='Enter Your Captcha'
+                          />   )}*/}
+                    </FormControl>
+                    <FormControl sx={{ mb: 4, maxWidth: 140 }}>
+                      <TextField
+                        autoFocus
+                        disabled
+                        label=''
+                        size='small'
+                        value={2780}
+                        placeholder='Enter Your Captcha'
+                        style={{ fontWeight: 'bolder' }}
+                        sx={{ backgroundColor: 'yellow', color: 'black' }}
+                      />
+                    </FormControl>
+                  </>
                 </Grid>
                 {/* <Grid item xs={12}>
                   <TextField fullWidth label='Profile Link' placeholder='johndoe/profile' />
