@@ -345,6 +345,7 @@ const LoginPage = () => {
                           id='auth-login-v2-password'
                           error={Boolean(errors.password)}
                           type={showPassword ? 'text' : 'password'}
+                          size='small'
                           endAdornment={
                             <InputAdornment position='end'>
                               <IconButton
