@@ -265,6 +265,7 @@ const LoginPage = () => {
                     <TextField
                       autoFocus
                       label='Email'
+                      size='small'
                       value={value}
                       onBlur={onBlur}
                       onChange={onChange}
@@ -276,26 +277,53 @@ const LoginPage = () => {
                 {errors.email && <FormHelperText sx={{ color: 'error.main' }}>{errors.email.message}</FormHelperText>}
               </FormControl>
               {!next && (
-                <FormControl fullWidth sx={{ mb: 4 }}>
-                  <Controller
-                    name='captcha'
-                    control={control}
-                    rules={{ required: true }}
-                    render={({ field: { value, onChange, onBlur } }) => (
-                      <TextField
-                        autoFocus
-                        label='Captcha'
-                        value={value}
-                        onBlur={onBlur}
-                        onChange={onChange}
-                        placeholder='Enter Your Captcha'
-                      />
+                <>
+                  <FormControl sx={{ mb: 4, maxWidth: 250 }}>
+                    <Controller
+                      name='captcha'
+                      control={control}
+                      rules={{ required: true }}
+                      render={({ field: { value, onChange, onBlur } }) => (
+                        <TextField
+                          autoFocus
+                          label='Captcha'
+                          size='small'
+                          value={value}
+                          onBlur={onBlur}
+                          onChange={onChange}
+                          placeholder='Enter Your Captcha'
+                        />
+                      )}
+                    />
+                    {errors.captcha && (
+                      <FormHelperText sx={{ color: 'error.main' }}>{errors.captcha.message}</FormHelperText>
                     )}
-                  />
-                  {errors.captcha && (
-                    <FormHelperText sx={{ color: 'error.main' }}>{errors.captcha.message}</FormHelperText>
-                  )}
-                </FormControl>
+                  </FormControl>
+                  <FormControl sx={{ mb: 4, maxWidth: 140 }}>
+                    <Controller
+                      name='captcha'
+                      control={control}
+                      rules={{ required: true }}
+                      render={({ field: { value, onChange, onBlur } }) => (
+                        <TextField
+                          autoFocus
+                          disabled
+                          label=''
+                          size='small'
+                          value={2780}
+                          onBlur={onBlur}
+                          onChange={onChange}
+                          placeholder='Enter Your Captcha'
+                          style={{ fontWeight: 'bolder' }}
+                          sx={{ backgroundColor: 'yellow', color: 'black' }}
+                        />
+                      )}
+                    />
+                    {errors.captcha && (
+                      <FormHelperText sx={{ color: 'error.main' }}>{errors.captcha.message}</FormHelperText>
+                    )}
+                  </FormControl>
+                </>
               )}
 
               {next && (
@@ -369,7 +397,7 @@ const LoginPage = () => {
                   size='large'
                   type='button'
                   variant='contained'
-                  sx={{ mt: 5, mb: 7 }}
+                  sx={{ mt: 1, mb: 7 }}
                   onClick={() => setNext(true)}
                 >
                   Next
@@ -381,12 +409,12 @@ const LoginPage = () => {
                 </Button>
               )}
 
-              {/* <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
+              <Box sx={{ display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}>
                 <Typography sx={{ mr: 2, color: 'text.secondary' }}>New on our platform?</Typography>
-                <Typography href='/register' component={Link} sx={{ color: 'primary.main', textDecoration: 'none' }}>
+                <Typography href='/signup' component={Link} sx={{ color: 'primary.main', textDecoration: 'none' }}>
                   Create an account
                 </Typography>
-              </Box> */}
+              </Box>
               {/* <Divider
                 sx={{
                   '& .MuiDivider-wrapper': { px: 4 },

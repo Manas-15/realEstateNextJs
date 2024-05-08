@@ -187,27 +187,27 @@ const Register = () => {
               <Grid container spacing={5}>
                 <Grid item xs={12} sm={6}>
                   <FormControl fullWidth>
-                    <TextField label='Company Name' placeholder='Surya' />
+                    <TextField label='Company Name' placeholder='Surya' size='small' />
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <FormControl fullWidth>
-                    <TextField label='Full Name' placeholder='johndoe' />
+                    <TextField label='Full Name' placeholder='johndoe' size='small' />
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <FormControl fullWidth>
-                    <TextField label='Designation' placeholder='Manager' />
+                    <TextField label='Designation' placeholder='Manager' size='small' />
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <FormControl fullWidth>
-                    <TextField type='email' label='Email' placeholder='john.doe@email.com' />
+                    <TextField type='email' label='Email' placeholder='john.doe@email.com' size='small' />
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6}>
                   <FormControl fullWidth>
-                    <TextField type='text' label='Mobile No.' placeholder='+91' />
+                    <TextField type='text' label='Mobile No.' placeholder='+91' size='small' />
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6}>
@@ -216,6 +216,7 @@ const Register = () => {
                     <OutlinedInput
                       label='Password'
                       id='input-password'
+                      size='small'
                       type={values.showPassword ? 'text' : 'password'}
                       endAdornment={
                         <InputAdornment position='end'>
@@ -238,6 +239,7 @@ const Register = () => {
                       label='Confirm Password'
                       id='input-confirm-password'
                       type={values.showConfirmPassword ? 'text' : 'password'}
+                      size='small'
                       endAdornment={
                         <InputAdornment position='end'>
                           <IconButton
@@ -253,7 +255,7 @@ const Register = () => {
                   </FormControl>
                 </Grid>
                 <Grid item xs={12} sm={6}>
-                  <FormControl fullWidth sx={{ mb: 4 }}>
+                  <FormControl fullWidth>
                     <TextField
                       autoFocus
                       label='Captcha'
@@ -297,6 +299,14 @@ const Register = () => {
                     >
                       Create Account
                     </Button>
+                  </Box>
+                  <Box
+                    sx={{ mt: 3, display: 'flex', alignItems: 'center', flexWrap: 'wrap', justifyContent: 'center' }}
+                  >
+                    <Typography sx={{ mr: 2, color: 'text.secondary' }}>Already have an account?</Typography>
+                    <Typography href='/login' component={Link} sx={{ color: 'primary.main', textDecoration: 'none' }}>
+                      Sign In
+                    </Typography>
                   </Box>
                 </Grid>
               </Grid>
