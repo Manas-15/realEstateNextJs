@@ -40,12 +40,6 @@ const navigation = () => {
       title: 'Roles & Right',
       icon: 'mdi:file-document-outline',
       path: '/apps/user/list'
-      // children: [
-      //   {
-      //     title: 'Roles Right',
-      //     path: '/apps/user/list'
-      //   }
-      // ]
     },
     {
       title: 'System Admin',

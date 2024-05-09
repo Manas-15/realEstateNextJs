@@ -176,7 +176,6 @@ const columns = [
     field: 'bank',
     headerName: 'Department Name',
     renderCell: ({ row }) => {
-      const { fullName, username } = row
       return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {/* {renderClient(row)} */}

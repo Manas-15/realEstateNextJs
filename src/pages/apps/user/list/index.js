@@ -174,19 +174,7 @@ const columns = [
       )
     }
   },
-  // {
-  //   flex: 0.2,
-  //   minWidth: 250,
-  //   field: 'email',
-  //   headerName: 'Email',
-  //   renderCell: ({ row }) => {
-  //     return (
-  //       <Typography noWrap variant='body2'>
-  //         {row.email}
-  //       </Typography>
-  //     )
-  //   }
-  // },
+
   {
     flex: 0.15,
     field: 'role',
