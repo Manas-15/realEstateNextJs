@@ -57,7 +57,7 @@ const navigation = () => {
         },
         {
           title: 'Bank Info',
-          path: '/bank-info'
+          path: '/systemadmin/bankinfo'
         }
       ]
     },
@@ -67,11 +67,11 @@ const navigation = () => {
       children: [
         {
           title: 'Department Name',
-          path: '/departments'
+          path: '/department/department-name'
         },
         {
           title: 'Designation',
-          path: '/designation'
+          path: '/department/designation'
         }
       ]
     },

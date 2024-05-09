@@ -160,28 +160,28 @@ const columns = [
   {
     flex: 0.1,
     minWidth: 10,
-    field: 'email',
-    headerName: 'ID',
+    field: 'id',
+    headerName: 'SL No',
     renderCell: ({ row }) => {
       return (
         <Typography noWrap variant='body2'>
-          {/* {row.email} */}1
+          {row.id}
         </Typography>
       )
     }
   },
   {
     flex: 0.2,
-    minWidth: 230,
-    field: 'fullName',
-    headerName: 'Company Name',
+    minWidth: 80,
+    field: 'bank',
+    headerName: 'Bank Name',
     renderCell: ({ row }) => {
       const { fullName, username } = row
       return (
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
           {/* {renderClient(row)} */}
           <Box sx={{ display: 'flex', alignItems: 'flex-start', flexDirection: 'column' }}>
-            <LinkStyled href='/apps/user/view/overview/'>{fullName}</LinkStyled>
+            <LinkStyled href='/apps/user/view/overview/'>IDFC Bank</LinkStyled>
             {/* <Typography noWrap variant='caption'>
               {`@${username}`}
             </Typography> */}
@@ -190,18 +190,17 @@ const columns = [
       )
     }
   },
-
   {
     flex: 0.15,
-    field: 'role',
-    minWidth: 150,
-    headerName: 'Company ID',
+    field: 'branch',
+    minWidth: 80,
+    headerName: 'Branch Name',
     renderCell: ({ row }) => {
       return (
-        <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 3, color: userRoleObj[row.role].color } }}>
+        <Box sx={{ display: 'flex', alignItems: 'center', '& svg': { mr: 3 } }}>
           {/* <Icon icon={userRoleObj[row.role].icon} fontSize={20} /> */}
           <Typography noWrap sx={{ color: 'text.secondary', textTransform: 'capitalize' }}>
-            {/* {row.role} */}1256
+            {/* {row.role} */}Damana Chhak
           </Typography>
         </Box>
       )
@@ -209,328 +208,140 @@ const columns = [
   },
   {
     flex: 0.15,
-    minWidth: 100,
-    headerName: 'Company Type',
-    field: 'currentPlan',
+    minWidth: 80,
+    headerName: 'IFSC Code',
+    field: 'ifsc',
     renderCell: ({ row }) => {
       return (
         <Typography variant='subtitle1' noWrap sx={{ textTransform: 'capitalize' }}>
-          {/* {row.currentPlan} */} Head Office
+          {/* {row.currentPlan} */} SBIN0014468
         </Typography>
       )
     }
   },
   {
     flex: 0.15,
-    minWidth: 90,
-    headerName: 'Incorporation No',
-    field: 'currentBill',
+    minWidth: 80,
+    headerName: 'Account Name',
+    field: 'account_name',
     renderCell: ({ row }) => {
       return (
         <Typography variant='subtitle1' noWrap sx={{ textTransform: 'capitalize' }}>
           {/* {row.currentPlan} */}
-          IN1578
+          Deenabandhu
         </Typography>
       )
     }
   },
-
+  {
+    flex: 0.15,
+    minWidth: 80,
+    headerName: 'Account Name',
+    field: 'account_no',
+    renderCell: ({ row }) => {
+      return (
+        <Typography variant='subtitle1' noWrap sx={{ textTransform: 'capitalize' }}>
+          {/* {row.currentPlan} */}
+          97784564564131
+        </Typography>
+      )
+    }
+  },
   {
     flex: 0.1,
     minWidth: 90,
+    sortable: false,
     field: 'actions',
     headerName: 'Actions',
-    renderCell: ({ row }) => {
-      return (
-        <Tooltip title='View'>
-          <IconButton size='small' component={Link} sx={{ mr: 0.5 }} href='#'>
-            {/* href={`/apps/invoice/preview/${row.id}`} */}
-            <Icon icon='mdi:eye-outline' />
-          </IconButton>
-        </Tooltip>
-      )
-    }
+    renderCell: ({ row }) => <RowOptions id={row.id} />
   }
 
-  // {
-  //   flex: 0.1,
-  //   minWidth: 90,
-  //   sortable: false,
-  //   field: 'actions',
-  //   headerName: 'Actions',
-  //   renderCell: ({ row }) => <RowOptions id={row.id} />
-  // }
+  //   {
+  //     flex: 0.1,
+  //     minWidth: 90,
+  //     field: 'actions',
+  //     headerName: 'Actions',
+  //     renderCell: ({ row }) => {
+  //       return (
+  //         <Tooltip title='View'>
+  //           <IconButton size='small' component={Link} sx={{ mr: 0.5 }} href='#'>
+  //             {/* href={`/apps/invoice/preview/${row.id}`} */}
+  //             <Icon icon='mdi:eye-outline' />
+  //           </IconButton>
+  //         </Tooltip>
+  //       )
+  //     }
+  //   }
 ]
 
 const rowsData = [
   {
     id: 1,
-    fullName: 'Galen Slixby',
-    company: 'Yotz PVT LTD',
-    role: 'editor',
-    username: 'gslixby0',
-    country: 'El Salvador',
-    contact: '(479) 232-9151',
-    email: 'gslixby0@abc.net.au',
-    currentPlan: 'enterprise',
-    status: 'inactive',
-    avatar: '',
-    avatarColor: 'primary'
+    bank: 'Yotz PVT LTD',
+    branch: 'editor',
+    ifsc: 'gslixby0',
+    account_name: 'gslixby0',
+    account_no: 'El Salvador'
   },
   {
     id: 2,
-    fullName: 'Halsey Redmore',
-    company: 'Skinder PVT LTD',
-    role: 'author',
-    username: 'hredmore1',
-    country: 'Albania',
-    contact: '(472) 607-9137',
-    email: 'hredmore1@imgur.com',
-    currentPlan: 'team',
-    status: 'pending',
-    avatar: '/images/avatars/3.png'
+    bank: 'Yotz PVT LTD',
+    branch: 'editor',
+    ifsc: 'gslixby0',
+    account_name: 'gslixby0',
+    account_no: 'El Salvador'
   },
   {
     id: 3,
-    fullName: 'Marjory Sicely',
-    company: 'Oozz PVT LTD',
-    role: 'maintainer',
-    username: 'msicely2',
-    country: 'Russia',
-    contact: '(321) 264-4599',
-    email: 'msicely2@who.int',
-    currentPlan: 'enterprise',
-    status: 'active',
-    avatar: '/images/avatars/1.png'
+    bank: 'Yotz PVT LTD',
+    branch: 'editor',
+    ifsc: 'gslixby0',
+    account_name: 'gslixby0',
+    account_no: 'El Salvador'
   },
   {
-    id: 4,
-    fullName: 'Cyrill Risby',
-    company: 'Oozz PVT LTD',
-    role: 'maintainer',
-    username: 'crisby3',
-    country: 'China',
-    contact: '(923) 690-6806',
-    email: 'crisby3@wordpress.com',
-    currentPlan: 'team',
-    status: 'inactive',
-    avatar: '/images/avatars/3.png'
+    id: 1,
+    bank: 'Yotz PVT LTD',
+    branch: 'editor',
+    ifsc: 'gslixby0',
+    account_name: 'gslixby0',
+    account_no: 'El Salvador'
   },
   {
-    id: 5,
-    fullName: 'Maggy Hurran',
-    company: 'Aimbo PVT LTD',
-    role: 'subscriber',
-    username: 'mhurran4',
-    country: 'Pakistan',
-    contact: '(669) 914-1078',
-    email: 'mhurran4@yahoo.co.jp',
-    currentPlan: 'enterprise',
-    status: 'pending',
-    avatar: '/images/avatars/1.png'
+    id: 1,
+    bank: 'Yotz PVT LTD',
+    branch: 'editor',
+    ifsc: 'gslixby0',
+    account_name: 'gslixby0',
+    account_no: 'El Salvador'
   },
   {
-    id: 6,
-    fullName: 'Silvain Halstead',
-    company: 'Jaxbean PVT LTD',
-    role: 'author',
-    username: 'shalstead5',
-    country: 'China',
-    contact: '(958) 973-3093',
-    email: 'shalstead5@shinystat.com',
-    currentPlan: 'company',
-    status: 'active',
-    avatar: '',
-    avatarColor: 'error'
+    id: 1,
+    bank: 'Yotz PVT LTD',
+    branch: 'editor',
+    ifsc: 'gslixby0',
+    account_name: 'gslixby0',
+    account_no: 'El Salvador'
   },
   {
-    id: 7,
-    fullName: 'Breena Gallemore',
-    company: 'Jazzy PVT LTD',
-    role: 'subscriber',
-    username: 'bgallemore6',
-    country: 'Canada',
-    contact: '(825) 977-8152',
-    email: 'bgallemore6@boston.com',
-    currentPlan: 'company',
-    status: 'pending',
-    avatar: '',
-    avatarColor: 'warning'
+    id: 1,
+    bank: 'Yotz PVT LTD',
+    branch: 'editor',
+    ifsc: 'gslixby0',
+    account_name: 'gslixby0',
+    account_no: 'El Salvador'
   },
   {
-    id: 8,
-    fullName: 'Kathryne Liger',
-    company: 'Pixoboo PVT LTD',
-    role: 'author',
-    username: 'kliger7',
-    country: 'France',
-    contact: '(187) 440-0934',
-    email: 'kliger7@vinaora.com',
-    currentPlan: 'enterprise',
-    status: 'pending',
-    avatar: '/images/avatars/4.png'
-  },
-  {
-    id: 9,
-    fullName: 'Franz Scotfurth',
-    company: 'Tekfly PVT LTD',
-    role: 'subscriber',
-    username: 'fscotfurth8',
-    country: 'China',
-    contact: '(978) 146-5443',
-    email: 'fscotfurth8@dailymotion.com',
-    currentPlan: 'team',
-    status: 'pending',
-    avatar: '/images/avatars/2.png'
-  },
-  {
-    id: 10,
-    fullName: 'Jillene Bellany',
-    company: 'Gigashots PVT LTD',
-    role: 'maintainer',
-    username: 'jbellany9',
-    country: 'Jamaica',
-    contact: '(589) 284-6732',
-    email: 'jbellany9@kickstarter.com',
-    currentPlan: 'company',
-    status: 'inactive',
-    avatar: '/images/avatars/5.png'
-  },
-  {
-    id: 11,
-    fullName: 'Jonah Wharlton',
-    company: 'Eare PVT LTD',
-    role: 'subscriber',
-    username: 'jwharltona',
-    country: 'United States',
-    contact: '(176) 532-6824',
-    email: 'jwharltona@oakley.com',
-    currentPlan: 'team',
-    status: 'inactive',
-    avatar: '/images/avatars/4.png'
-  },
-  {
-    id: 12,
-    fullName: 'Seth Hallam',
-    company: 'Yakitri PVT LTD',
-    role: 'subscriber',
-    username: 'shallamb',
-    country: 'Peru',
-    contact: '(234) 464-0600',
-    email: 'shallamb@hugedomains.com',
-    currentPlan: 'team',
-    status: 'pending',
-    avatar: '/images/avatars/5.png'
-  },
-  {
-    id: 13,
-    fullName: 'Yoko Pottie',
-    company: 'Leenti PVT LTD',
-    role: 'subscriber',
-    username: 'ypottiec',
-    country: 'Philippines',
-    contact: '(907) 284-5083',
-    email: 'ypottiec@privacy.gov.au',
-    currentPlan: 'basic',
-    status: 'inactive',
-    avatar: '/images/avatars/7.png'
-  },
-  {
-    id: 14,
-    fullName: 'Maximilianus Krause',
-    company: 'Digitube PVT LTD',
-    role: 'author',
-    username: 'mkraused',
-    country: 'Democratic Republic of the Congo',
-    contact: '(167) 135-7392',
-    email: 'mkraused@stanford.edu',
-    currentPlan: 'team',
-    status: 'active',
-    avatar: '/images/avatars/6.png'
-  },
-  {
-    id: 15,
-    fullName: 'Zsazsa McCleverty',
-    company: 'Kaymbo PVT LTD',
-    role: 'maintainer',
-    username: 'zmcclevertye',
-    country: 'France',
-    contact: '(317) 409-6565',
-    email: 'zmcclevertye@soundcloud.com',
-    currentPlan: 'enterprise',
-    status: 'active',
-    avatar: '/images/avatars/2.png'
-  },
-  {
-    id: 16,
-    fullName: 'Bentlee Emblin',
-    company: 'Yambee PVT LTD',
-    role: 'author',
-    username: 'bemblinf',
-    country: 'Spain',
-    contact: '(590) 606-1056',
-    email: 'bemblinf@wired.com',
-    currentPlan: 'company',
-    status: 'active',
-    avatar: '/images/avatars/6.png'
-  },
-  {
-    id: 17,
-    fullName: 'Brockie Myles',
-    company: 'Wikivu PVT LTD',
-    role: 'maintainer',
-    username: 'bmylesg',
-    country: 'Poland',
-    contact: '(553) 225-9905',
-    email: 'bmylesg@amazon.com',
-    currentPlan: 'basic',
-    status: 'active',
-    avatar: '',
-    avatarColor: 'success'
-  },
-  {
-    id: 18,
-    fullName: 'Bertha Biner',
-    company: 'Twinte PVT LTD',
-    role: 'editor',
-    username: 'bbinerh',
-    country: 'Yemen',
-    contact: '(901) 916-9287',
-    email: 'bbinerh@mozilla.com',
-    currentPlan: 'team',
-    status: 'active',
-    avatar: '/images/avatars/7.png'
-  },
-  {
-    id: 19,
-    fullName: 'Travus Bruntjen',
-    company: 'Cogidoo PVT LTD',
-    role: 'admin',
-    username: 'tbruntjeni',
-    country: 'France',
-    contact: '(524) 586-6057',
-    email: 'tbruntjeni@sitemeter.com',
-    currentPlan: 'enterprise',
-    status: 'active',
-    avatar: '',
-    avatarColor: 'primary'
-  },
-  {
-    id: 20,
-    fullName: 'Wesley Burland',
-    company: 'Bubblemix PVT LTD',
-    role: 'editor',
-    username: 'wburlandj',
-    country: 'Honduras',
-    contact: '(569) 683-1292',
-    email: 'wburlandj@uiuc.edu',
-    currentPlan: 'team',
-    status: 'inactive',
-    avatar: '/images/avatars/6.png'
+    id: 1,
+    bank: 'Yotz PVT LTD',
+    branch: 'editor',
+    ifsc: 'gslixby0',
+    account_name: 'gslixby0',
+    account_no: 'El Salvador'
   }
 ]
 
-const CompanyInfo = ({ apiData }) => {
+const Departments = ({ apiData }) => {
   // ** State
   const [role, setRole] = useState('')
   const [plan, setPlan] = useState('')
@@ -576,10 +387,10 @@ const CompanyInfo = ({ apiData }) => {
     <Grid container spacing={6}>
       <Grid item xs={12}>
         <div style={{ display: 'flex', justifyContent: 'space-between' }}>
-          <Breadcrumb home='Home' parent_name='System Admin' child_name='Company Info' />
+          <Breadcrumb home='Home' parent_name='System Admin' child_name='Bank Info' />
           <Button variant='contained'>
             <Icon icon='mdi:plus' />
-            Company
+            Bank
           </Button>
         </div>
 
@@ -695,4 +506,4 @@ export const getStaticProps = async () => {
   }
 }
 
-export default CompanyInfo
+export default Departments
